@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+    paths-ignore:
+      - 'docs/**'
+  pull_request:
+    paths-ignore:
+      - 'docs/**'
+  workflow_dispatch: # 新增：允许你在网页上手动点击按钮触发编译
+
+jobs:
+  build:
+    name: build-windows
+    runs-on: windows-latest # 指定只在 Windows 环境下运行
+
+    steps:
+      # 1. 拉取你的代码
+      - uses: actions/checkout@v4
+
+      # 2. 配置 Rust 编译环境
+      - uses: dtolnay/rust-toolchain@stable
+
+      # 3. 开启缓存，加快后续编译速度
+      - uses: Swatinem/rust-cache@v2
+
+      # 4. 执行 Windows 编译命令
+      - name: Build for Windows
+        run: cargo build --verbose --release
+
+      # 5. 上传编译好的 Windows 成品
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: windows-release
+          path: |
+            target/release/v8_killer_core.dll
+            target/release/v8_killer_launcher.exe
