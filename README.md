@@ -96,7 +96,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-ShellWen - [@realShellWen](https://twitter.com/realShellWen) - me@shellwen.com
+TG@bieati
 
 
 
