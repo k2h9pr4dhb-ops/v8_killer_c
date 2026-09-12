@@ -98,7 +98,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ShellWen - [@realShellWen](https://twitter.com/realShellWen) - me@shellwen.com
 
-Project Link: [https://github.com/ShellWen/v8_killer](https://github.com/ShellWen/v8_killer)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
